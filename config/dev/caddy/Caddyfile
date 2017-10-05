@@ -1,0 +1,11 @@
+jakesite.dev:80 {
+	root /var/www/html
+	tls jrcarlson@smu.edu
+	gzip
+	log /var/log/caddy/access.log
+	errors /var/log/caddy/error.log
+
+	rewrite {
+		to {path}/ {path}
+	}
+}

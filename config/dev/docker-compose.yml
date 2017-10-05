@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+    web-server:
+        image: abiosoft/caddy
+        restart: always
+        stdin_open: true
+        tty: true
+        ports:
+            - 80:80
+            - 443:443
+        volumes:
+            - ./caddy/Caddyfile:/etc/Caddyfile
+            - caddy_data:/etc/caddycerts
+            - ../../src/public:/var/www/html
+            - ../../logs/caddy:/var/log/caddy
+        environment:
+            CADDYPATH: /etc/caddycerts
+        networks:
+            - default
+volumes:
+    caddy_data:
