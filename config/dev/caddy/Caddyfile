@@ -1,4 +1,4 @@
-jakesite.dev:80 {
+jakecarlson.localhost:80 {
 	root /var/www/html
 	tls jrcarlson@smu.edu
 	gzip
